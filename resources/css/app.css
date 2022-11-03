@@ -91,10 +91,29 @@ h1, h2, h3, h4, h5, h6 {font-family: "Zilla Slab"; font-weight: bold}
     border-radius: 4px;
     border: none;
     margin: 0.5rem;
-    padding: 1rem;
-    width: 350px;
+    padding-block: 1rem;
+    padding-inline: 1vw;
+    width: 20vw;
 }
-.formInicioSesion input {
-    width: 318px;
+.formInicioSesion button {
+    width: 22vw;
+    cursor: pointer;
 }
 
+.ojo {
+    background-image: url("/public/iconos/Ojo.svg");
+    background-size: cover;
+    background-color: transparent;
+    width: 15px;
+    height: 10px;
+    border: none;
+    position: absolute;
+    top: 50vh;
+    right: 7vw;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+/*----------------------------------------------------------------------------------------------------------
+--------FIN DEL LOGIN---------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------*/
