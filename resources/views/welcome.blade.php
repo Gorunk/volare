@@ -26,8 +26,11 @@
                 <div class="mb-3">
                     <a style="color:white; font-size: 0.6rem; padding-inline: 0.5rem" href="/">Olvidé mi contraseña</a>
                 </div>
-                <button type="submit" style="color: white; font-size: 1rem; font-weight: bold" class="btn btn-primary azul">Iniciar sesión</button>
+                <div class="mb-3 botonLogin">
+                    <button type="submit" style="color: white; font-size: 1rem; font-weight: bold" class="btn btn-primary azul">Iniciar sesión</button>
+                </div>
             </div>
+            <input type="button" class="btn btn-primary ojo" id="ojo">
         </form>
     </div>
 </div>
