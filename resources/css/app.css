@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css?family=Zilla Slab');
+@import url('https://fonts.googleapis.com/css?family=Open Sans');
+
+h1, h2, h3, h4, h5, h6 {font-family: "Zilla Slab"; font-weight: bold}
+* {
+    font-family: "Open Sans";
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+
+/*----------------------------------------------------------------------------------------------------------
+--------COLORES---------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------*/
+
+.azul {
+    background-color: #22B3B2;
+}
+
+.verde {
+    border-color: #5DB130;
+}
+
+.negro {
+    background-color: #0A2827;
+}
+
+.negroHeader {
+    background-color: #0A2827;
+}
+
+.gris {
+    background-color: #909494;
+}
+
+.blancoFondo {
+    background-color: #E4F2F2;
+}
+.blancoBorde {
+    border-color: #E4F2F2;
+}
+
+/*----------------------------------------------------------------------------------------------------------
+--------ICONOS----------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------*/
+
+.logoGrande {
+    margin: auto;
+}
+
+/*----------------------------------------------------------------------------------------------------------
+--------PÁGINA DE LOGIN-------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------*/
+.login {
+    display: grid;
+    grid-template-columns: 66.6666% 33.3333%;
+    text-align: center;
+    height: 100vh;
+    justify-content: center;
+}
+
+.imagenLogoL {
+    background-image: url("/public/VolareLogoWhite.svg");
+    background-size: cover;
+    margin: auto;
+    height: 154px;
+    width: 150px;
+}
+
+.logoInicioSesion{
+    display: grid;
+    color: white;
+    height: 100vh;
+
+}
+
+.inicioSesion {
+    color: white;
+    margin: auto 0;
+}
+
+.formInicioSesion {
+    color: white;
+    margin: 2rem;
+    display: grid;
+    justify-content: center;
+    justify-items: end;
+}
+
+.formInicioSesion input, button {
+    border-radius: 4px;
+    border: none;
+    margin: 0.5rem;
+    padding: 1rem;
+    width: 350px;
+}
+.formInicioSesion input {
+    width: 318px;
+}
+
