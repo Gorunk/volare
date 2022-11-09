@@ -25,8 +25,8 @@ h1, h2, h3, h4, h5, h6 {font-family: "Zilla Slab"; font-weight: bold}
     background-color: #0A2827;
 }
 
-.negroHeader {
-    background-color: #0A2827;
+.negroNav{
+    background-color: rgb(35, 61, 60);
 }
 
 .gris {
@@ -37,7 +37,11 @@ h1, h2, h3, h4, h5, h6 {font-family: "Zilla Slab"; font-weight: bold}
     background-color: #E4F2F2;
 }
 .blancoBorde {
-    border-color: #E4F2F2;
+    border-right: #E4F2F2 solid 0.5rem;
+}
+
+.blancoTexto {
+    color: #E4F2F2;
 }
 
 /*----------------------------------------------------------------------------------------------------------
@@ -59,7 +63,7 @@ h1, h2, h3, h4, h5, h6 {font-family: "Zilla Slab"; font-weight: bold}
     justify-content: center;
 }
 
-.imagenLogoL {
+.imagenLogoW {
     background-image: url("/public/VolareLogoWhite.svg");
     background-size: cover;
     margin: auto;
@@ -115,5 +119,77 @@ h1, h2, h3, h4, h5, h6 {font-family: "Zilla Slab"; font-weight: bold}
 }
 
 /*----------------------------------------------------------------------------------------------------------
---------FIN DEL LOGIN---------------------------------------------------------------------------------------
+--------CONTENIDO COMÚN-------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------*/
+
+.pagina {
+    display: flex;
+    height: 100vh;
+}
+
+/*----------------------------------------------------------------------------------------------------------
+--------NAV LATERAL-----------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------*/
+
+.navLateral {
+    display: flex;
+    flex-direction: column;
+}
+.navLateral a {
+    margin-block: 0.5rem;
+    cursor: pointer;
+}
+.navLateral a div{
+    margin: 1rem;
+    margin-left: 1.5rem;
+    text-decoration: none;
+    height: 2.5rem;
+    width: 2.5rem;
+}
+
+.navLateral a:hover {
+    background-color: rgba(100%, 100%, 100%, 0.2);
+}
+
+.iconBrgr {
+    margin-bottom: 2rem;
+    background-image: url("/public/iconos/Hamburguesa.svg");
+    background-size: cover;
+}
+
+.iconDB {
+    background-image: url("/public/iconos/Tabla.svg");
+    background-size: cover;
+}
+
+.iconVuelos {
+    background-image: url("/public/iconos/Avion.svg");
+    background-size: cover;
+}
+
+.iconVentas{
+    background-image: url("/public/iconos/Etiqueta.svg");
+    background-size: cover;
+}
+
+.iconUsers {
+    background-image: url("/public/iconos/Usuario.svg");
+    background-size: cover;
+}
+
+/*----------------------------------------------------------------------------------------------------------
+--------NAV SUPERIOR----------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------*/
+
+.navSuperior {
+    width: 100vw;
+    padding: 1rem;
+}
+
+.imagenLogoNavbar {
+    background-image: url("/public/VolareLogo.svg");
+    background-size: cover;
+    margin-left: 1.5rem;
+    height: 57px;
+    width: 56px;
+}

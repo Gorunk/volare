@@ -20,3 +20,19 @@ Route::get('/', function () {
 Route::get('/login', function () {
     return view('login');
 });
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+});
+
+Route::get('/vuelos', function () {
+    return view('vuelos');
+});
+
+Route::get('/ventas', function () {
+    return view('ventas');
+});
+
+Route::get('/users', function () {
+    return view('users');
+});
