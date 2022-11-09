@@ -9,7 +9,7 @@
 <body>
 <div class="login negro">
     <div class="logoInicioSesion azul">
-        <div class="imagenLogoL"></div>
+        <div class="imagenLogoW"></div>
     </div>
     <div class="inicioSesion">
         <h1>Inicio de sesión</h1>
