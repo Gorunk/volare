@@ -21,10 +21,9 @@ ojo.addEventListener( "click", ()=> {
 ----------------------------------------------------------------------------------------------------------*/
 
 let elementos = document.getElementsByClassName("elemento")
-alert(document.documentURI +", "+ elementos[0].href);
 
 for(let i=0; i<elementos.length;i++) {
-    if(elementos[i].href===document.documentURI) {
-        elementos[i].class="blancoBorde";
+    if(elementos[i].getAttribute('href')===document.documentURI) {
+        elementos[i].setAttribute("class", "elemento blancoBorde");
     }
 }
