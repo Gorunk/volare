@@ -24,7 +24,7 @@
                     <input type="password" class="form-control" id="inputPassword" placeholder="Contraseña">
                 </div>
                 <div class="mb-3">
-                    <a style="color:white; font-size: 0.6rem; padding-inline: 0.5rem" href="/">Olvidé mi contraseña</a>
+                    <a style="color:white; font-size: 0.6rem; padding-inline: 0.5rem" href="/dashboard">Olvidé mi contraseña</a>
                 </div>
                 <div class="mb-3 botonLogin">
                     <button type="submit" style="color: white; font-size: 1rem; font-weight: bold" class="btn btn-primary azul">Iniciar sesión</button>

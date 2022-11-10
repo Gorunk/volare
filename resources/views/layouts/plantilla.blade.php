@@ -5,7 +5,7 @@
     <title>@yield('title')</title>
     @vite(['resources/js/app.js', 'resources/css/app.css'])
 </head>
-<body>
+<body class="blancoFondo">
 <div class="pagina">
     <div class="navLateral azul">
         <a class="elemento" href="/dashboard")><div class="iconBrgr"></div></a>
@@ -16,9 +16,11 @@
     </div>
     <div>
         <div class="navSuperior negroNav blancoTexto">
-            <div class="imagenLogoNavbar"></div>
+            <a href="/" class="linkLogoNav"><div class="imagenLogoNavbar"></div></a>
         </div>
-        @yield('content')
+        <fieldset class="content">
+            @yield('content')
+        </fieldset>
     </div>
 </div>
 </body>
