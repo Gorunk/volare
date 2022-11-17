@@ -160,28 +160,32 @@ h1, h2, h3, h4, h5, h6 {font-family: "Zilla Slab"; font-weight: bold}
     background-color: rgba(100%, 100%, 100%, 0.2);
 }
 
-.iconBrgr {
+.elemento {
+    border-right: transparent solid 0.5rem;
+}
+
+#iconBrgr {
     margin-bottom: 2rem;
     background-image: url("/public/iconos/Hamburguesa.svg");
     background-size: cover;
 }
 
-.iconDB {
+#iconDB {
     background-image: url("/public/iconos/Tabla.svg");
     background-size: cover;
 }
 
-.iconVuelos {
+#iconVuelos {
     background-image: url("/public/iconos/Avion.svg");
     background-size: cover;
 }
 
-.iconVentas{
+#iconVentas{
     background-image: url("/public/iconos/Etiqueta.svg");
     background-size: cover;
 }
 
-.iconUsers {
+#iconUsers {
     background-image: url("/public/iconos/Usuario.svg");
     background-size: cover;
 }

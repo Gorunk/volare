@@ -2,8 +2,9 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
-    <title>Volare</title>
+    <title>Login</title>
     @vite(['resources/js/app.js', 'resources/css/app.css'])
+    @vite(['resources/js/login.js'])
 </head>
 
 <body>

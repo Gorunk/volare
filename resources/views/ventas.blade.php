@@ -1,6 +1,6 @@
 @extends('layouts.plantilla')
 
-@section('title', 'DashBoard')
+@section('title', 'Lista de Ventas')
 
 @section('content')
     <h1>LISTADO DE VENTAS</h1>
