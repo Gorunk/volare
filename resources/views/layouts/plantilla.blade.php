@@ -8,11 +8,11 @@
 <body class="blancoFondo">
 <div class="pagina">
     <div class="navLateral azul">
-        <a class="elemento" href="/dashboard")><div class="iconBrgr"></div></a>
-        <a class="elemento blancoBorde" href="/dashboard" title="DashBoard"><div class="iconDB"></div></a>
-        <a class="elemento" href="/vuelos"><div title="Listado de Vuelos" class="iconVuelos"></div></a>
-        <a class="elemento" href="/ventas"><div title="Listado de Ventas" class="iconVentas"></div></a>
-        <a class="elemento" href="/users"><div title="Listado de Usuarios" class="iconUsers"></div></a>
+        <a href="/dashboard")><div id="iconBrgr"></div></a>
+        <a class="elemento" href="/dashboard" title="DashBoard"><div id="iconDB"></div></a>
+        <a class="elemento" href="/vuelos"><div title="Listado de Vuelos" id="iconVuelos"></div></a>
+        <a class="elemento" href="/ventas"><div title="Listado de Ventas" id="iconVentas"></div></a>
+        <a class="elemento" href="/users"><div title="Listado de Usuarios" id="iconUsers"></div></a>
     </div>
     <div>
         <div class="navSuperior negroNav blancoTexto">
