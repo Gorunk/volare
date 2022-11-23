@@ -17,6 +17,9 @@
     <div>
         <div class="navSuperior negroNav blancoTexto">
             <a href="/" class="linkLogoNav"><div class="imagenLogoNavbar"></div></a>
+            <div>
+                <a href="/dashboard" title="Lupa"><div id="iconLupa"></div></a>
+            </div>
         </div>
         <fieldset class="content">
             @yield('content')

@@ -195,11 +195,17 @@ h1, h2, h3, h4, h5, h6 {font-family: "Zilla Slab"; font-weight: bold}
 ----------------------------------------------------------------------------------------------------------*/
 
 .navSuperior {
-    display: grid;
+    display: flex;
     justify-content: space-between;
     width: 100vw;
     padding: 1rem;
     box-sizing: border-box;
+}
+
+#iconLupa {
+    background-image: url("/public/iconos/Lupa.svg");
+    background-size: cover;
+    background-color: white;
 }
 
 .imagenLogoNavbar {
@@ -233,6 +239,10 @@ h1, h2, h3, h4, h5, h6 {font-family: "Zilla Slab"; font-weight: bold}
 ============================================================================================================
 ----------------------------------------------------------------------------------------------------------*/
 
+/*----------------------------------------------------------------------------------------------------------
+--------ÚLTIMAS COMPRAS-------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------*/
+
 .dashgrid {
     display: flex;
     justify-content: center;
@@ -247,5 +257,37 @@ h1, h2, h3, h4, h5, h6 {font-family: "Zilla Slab"; font-weight: bold}
 }
 
 .dashCompras {
-    border-radius: 6px;
+    border: none;
+    border-collapse: collapse;
+    margin-block: 1.5rem;
 }
+
+.dashComprasTabla th {
+    padding: 1rem;
+    font-size: 1rem;
+}
+
+.dashComprasTabla td {
+    padding: 2rem 1rem 2rem 1rem;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.dashComprasTabla th:first-child {
+    border-top-left-radius: 6px;
+}
+.dashComprasTabla th:last-child {
+    border-top-right-radius: 6px;
+}
+.dashCompras tr:last-child td:first-child {
+    border-bottom-left-radius: 6px;
+}
+.dashCompras tr:last-child td:last-child {
+    border-bottom-right-radius: 6px;
+}
+
+/*----------------------------------------------------------------------------------------------------------
+--------PLAZAS VACANTES-------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------*/
+
