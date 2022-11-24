@@ -206,6 +206,7 @@ h1, h2, h3, h4, h5, h6 {font-family: "Zilla Slab"; font-weight: bold}
 .navSuperior {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 100vw;
     padding: 1rem;
     box-sizing: border-box;
@@ -214,7 +215,12 @@ h1, h2, h3, h4, h5, h6 {font-family: "Zilla Slab"; font-weight: bold}
 #iconLupa {
     background-image: url("/public/iconos/Lupa.svg");
     background-size: cover;
-    background-color: white;
+    padding: 1rem;
+}
+
+.navSuperior div:nth-child(2) {
+    padding: 0.3rem;
+    border-radius: 6px;
 }
 
 .imagenLogoNavbar {
@@ -255,6 +261,7 @@ h1, h2, h3, h4, h5, h6 {font-family: "Zilla Slab"; font-weight: bold}
 .dashgrid {
     display: flex;
     justify-content: center;
+    align-items: stretch;
 }
 
 .dashgrid fieldset {
@@ -292,17 +299,19 @@ h1, h2, h3, h4, h5, h6 {font-family: "Zilla Slab"; font-weight: bold}
 .dashCompras tr:last-child td:first-child {
     border-bottom-left-radius: 6px;
 }
-.dashCompras tr:last-child td:last-child {
+.dashCompras tr:last-child{
     border-bottom-right-radius: 6px;
 }
 
 #iconLapiz {
     background-image: url("/public/iconos/Lapiz.svg");
     background-size: cover;
+    margin-block: 0.5rem;
 }
 #iconPapelera {
     background-image: url("/public/iconos/Papelera.svg");
     background-size: cover;
+    margin-block: 0.5rem;
 }
 
 /*----------------------------------------------------------------------------------------------------------
@@ -316,6 +325,7 @@ h1, h2, h3, h4, h5, h6 {font-family: "Zilla Slab"; font-weight: bold}
 
 .vuelosVacantes fieldset {
     padding: 1rem;
+    margin-inline: 0;
 }
 
 .vuelosVacantes div:first-child {
@@ -323,7 +333,17 @@ h1, h2, h3, h4, h5, h6 {font-family: "Zilla Slab"; font-weight: bold}
     font-size: 1.2rem;
 }
 .vuelosVacantes div:nth-child(2) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.vuelosVacantes div:nth-child(2) div:first-child {
     font-size: 0.8rem;
+    font-weight: normal;
+}
+.vuelosVacantes div:nth-child(2) div:nth-child(2) {
+    color: #22B3B2;
+    font-weight: bold;
 }
 .vuelosVacantes progress {
     width: 100%;
@@ -333,4 +353,26 @@ h1, h2, h3, h4, h5, h6 {font-family: "Zilla Slab"; font-weight: bold}
 .vuelosVacantes progress::-webkit-progress-bar {
     background-color: #E4F2F2;
     border-radius: 6px;
+}
+.vuelosVacantes progress::-webkit-progress-value {
+    background-color: #22B3B2;
+    border-radius: 6px;
+}
+
+/*----------------------------------------------------------------------------------------------------------
+============================================================================================================
+--------BUSQUEDA Y FILTROS----------------------------------------------------------------------------------
+============================================================================================================
+----------------------------------------------------------------------------------------------------------*/
+
+.barraDeBusqueda {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.barraDeBusqueda button {
+    padding: 0.5rem;
+    width: 10rem;
+    cursor: pointer;
 }

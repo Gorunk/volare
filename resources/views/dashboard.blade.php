@@ -68,29 +68,41 @@
                 <li>
                     <fieldset style="background: white">
                         <div>Vuelo F123G</div>
-                        <div>Sevilla - Madrid</div>
-                        <progress value="44" max="100">44%</progress>
+                        <div>
+                            <div>Sevilla - Madrid</div>
+                            <div>44%</div>
+                        </div>
+                        <progress id="progresoVuelos" value="44" max="100"></progress>
                     </fieldset>
                 </li>
                 <li>
                     <fieldset style="background: white">
                         <div>Vuelo F123G</div>
-                        <div>Sevilla - Madrid</div>
-                        <progress value="44" max="100">44%</progress>
+                        <div>
+                            <div>Sevilla - Madrid</div>
+                            <div>44%</div>
+                        </div>
+                        <progress id="progresoVuelos" value="44" max="100"></progress>
                     </fieldset>
                 </li>
                 <li>
                     <fieldset style="background: white">
                         <div>Vuelo F123G</div>
-                        <div>Sevilla - Madrid</div>
-                        <progress value="44" max="100">44%</progress>
+                        <div>
+                            <div>Sevilla - Madrid</div>
+                            <div>44%</div>
+                        </div>
+                        <progress id="progresoVuelos" value="44" max="100"></progress>
                     </fieldset>
                 </li>
                 <li>
                     <fieldset style="background: white">
                         <div>Vuelo F123G</div>
-                        <div>Sevilla - Madrid</div>
-                        <progress value="44" max="100">44%</progress>
+                        <div>
+                            <div>Sevilla - Madrid</div>
+                            <div>44%</div>
+                        </div>
+                        <progress id="progresoVuelos" value="44" max="100"></progress>
                     </fieldset>
                 </li>
             </ul>
