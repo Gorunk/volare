@@ -376,3 +376,29 @@ h1, h2, h3, h4, h5, h6 {font-family: "Zilla Slab"; font-weight: bold}
     width: 10rem;
     cursor: pointer;
 }
+#iconFiltro {
+    background-image: url("/public/iconos/Filtro.svg");
+    background-size: cover;
+    padding: 0.8rem;
+}
+.flexBuscarTablas {
+    display: flex;
+    align-items: center;
+}
+
+.buscarTablas {
+    padding: 0.7rem 1rem 0.7rem 2.5rem;
+    border: none;
+    border-bottom: 2px solid lightgray;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    margin-inline: 1rem;
+}
+
+#iconLupaOscura {
+    background-image: url("/public/iconos/LupaOscura.svg");
+    background-size: cover;
+    padding: 0.7rem;
+    position: absolute;
+    margin-left: 1.5rem;
+}
