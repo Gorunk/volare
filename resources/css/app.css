@@ -402,3 +402,11 @@ h1, h2, h3, h4, h5, h6 {font-family: "Zilla Slab"; font-weight: bold}
     position: absolute;
     margin-left: 1.5rem;
 }
+
+#iconSuma {
+    background-image: url("/public/iconos/Suma.svg");
+    background-size: cover;
+    padding: 0.4rem;
+    position: absolute;
+    margin-left: 1.1rem;
+}
