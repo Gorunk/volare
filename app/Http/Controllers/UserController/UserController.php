@@ -4,6 +4,7 @@ namespace App\Http\Controllers\UserController;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\LoginRequest;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -16,7 +17,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        return view('dashboard');
     }
 
     /**
@@ -37,7 +38,17 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'email' => 'required',
+            'password' => 'required'
+        ]);
+
+        $user = new User();
+
+        $user->email = $request->email;
+        $user->password = $request->password;
+
+        $user->save();
     }
 
     /**
@@ -48,7 +59,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        return view('auth.welcome');
+        return view('auth.dashboard');
     }
 
     public function login(LoginRequest $request) {
