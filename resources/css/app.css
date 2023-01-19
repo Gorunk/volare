@@ -152,7 +152,7 @@ h1, h2, h3, h4, h5, h6 {font-family: "Zilla Slab"; font-weight: bold}
 .navLateral {
     display: flex;
     flex-direction: column;
-    position: absolute;
+    position: fixed;
     min-height: 100%;
 }
 .navLateral a {
@@ -219,6 +219,12 @@ h1, h2, h3, h4, h5, h6 {font-family: "Zilla Slab"; font-weight: bold}
 }
 
 .navSuperior div:nth-child(2) {
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+}
+
+.navSuperior div div:nth-child(1) {
     padding: 0.3rem;
     border-radius: 6px;
 }

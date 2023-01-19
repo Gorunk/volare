@@ -17,44 +17,44 @@
                     <th>ACCIONES</th>
                 </tr>
                 <tr class="dashComprasTabla" style="background: #ffffff">
-                    <td>Jesús Delgado</td>
-                    <td>F123N</td>
-                    <td>00457ABV</td>
-                    <td>Sevilla</td>
-                    <td>Madrid</td>
+                    <td>{{"Jesús Delgado"}}</td>
+                    <td>{{"F123N"}}</td>
+                    <td>{{"00457ABV"}}</td>
+                    <td>{{"Sevilla"}}</td>
+                    <td>{{"Madrid"}}</td>
                     <td>
                         <a class="iconTabla" href="/dashboard" title="Editar"><div id="iconLapiz"></div></a>
                         <a class="iconTabla" href="/dashboard" title="Borrar"><div id="iconPapelera"></div></a>
                     </td>
                 </tr>
                 <tr class="dashComprasTabla" style="background: #ffffff">
-                    <td>Jesús Delgado</td>
-                    <td>F123N</td>
-                    <td>00457ABV</td>
-                    <td>Sevilla</td>
-                    <td>Madrid</td>
+                    <td>{{"Jesús Delgado"}}</td>
+                    <td>{{"F123N"}}</td>
+                    <td>{{"00457ABV"}}</td>
+                    <td>{{"Sevilla"}}</td>
+                    <td>{{"Madrid"}}</td>
                     <td>
                         <a class="iconTabla" href="/dashboard" title="Editar"><div id="iconLapiz"></div></a>
                         <a class="iconTabla" href="/dashboard" title="Borrar"><div id="iconPapelera"></div></a>
                     </td>
                 </tr>
                 <tr class="dashComprasTabla" style="background: #ffffff">
-                    <td>Jesús Delgado</td>
-                    <td>F123N</td>
-                    <td>00457ABV</td>
-                    <td>Sevilla</td>
-                    <td>Madrid</td>
+                    <td>{{"Jesús Delgado"}}</td>
+                    <td>{{"F123N"}}</td>
+                    <td>{{"00457ABV"}}</td>
+                    <td>{{"Sevilla"}}</td>
+                    <td>{{"Madrid"}}</td>
                     <td>
                         <a class="iconTabla" href="/dashboard" title="Editar"><div id="iconLapiz"></div></a>
                         <a class="iconTabla" href="/dashboard" title="Borrar"><div id="iconPapelera"></div></a>
                     </td>
                 </tr>
                 <tr class="dashComprasTabla" style="background: #ffffff">
-                    <td>Jesús Delgado</td>
-                    <td>F123N</td>
-                    <td>00457ABV</td>
-                    <td>Sevilla</td>
-                    <td>Madrid</td>
+                    <td>{{"Jesús Delgado"}}</td>
+                    <td>{{"F123N"}}</td>
+                    <td>{{"00457ABV"}}</td>
+                    <td>{{"Sevilla"}}</td>
+                    <td>{{"Madrid"}}</td>
                     <td>
                         <a class="iconTabla" href="/dashboard" title="Editar"><div id="iconLapiz"></div></a>
                         <a class="iconTabla" href="/dashboard" title="Borrar"><div id="iconPapelera"></div></a>
@@ -67,9 +67,9 @@
             <ul class="vuelosVacantes">
                 <li>
                     <fieldset style="background: white">
-                        <div>Vuelo F123G</div>
+                        <div>Vuelo {{"F123G"}}</div>
                         <div>
-                            <div>Sevilla - Madrid</div>
+                            <div>{{"Sevilla"}} - {{"Madrid"}}</div>
                             <div>44%</div>
                         </div>
                         <progress id="progresoVuelos" value="44" max="100"></progress>
@@ -77,9 +77,9 @@
                 </li>
                 <li>
                     <fieldset style="background: white">
-                        <div>Vuelo F123G</div>
+                        <div>Vuelo {{"F123G"}}</div>
                         <div>
-                            <div>Sevilla - Madrid</div>
+                            <div>{{"Sevilla"}} - {{"Madrid"}}</div>
                             <div>44%</div>
                         </div>
                         <progress id="progresoVuelos" value="44" max="100"></progress>
@@ -87,9 +87,9 @@
                 </li>
                 <li>
                     <fieldset style="background: white">
-                        <div>Vuelo F123G</div>
+                        <div>Vuelo {{"F123G"}}</div>
                         <div>
-                            <div>Sevilla - Madrid</div>
+                            <div>{{"Sevilla"}} - {{"Madrid"}}</div>
                             <div>44%</div>
                         </div>
                         <progress id="progresoVuelos" value="44" max="100"></progress>
@@ -97,9 +97,9 @@
                 </li>
                 <li>
                     <fieldset style="background: white">
-                        <div>Vuelo F123G</div>
+                        <div>Vuelo {{"F123G"}}</div>
                         <div>
-                            <div>Sevilla - Madrid</div>
+                            <div>{{"Sevilla"}} - {{"Madrid"}}</div>
                             <div>44%</div>
                         </div>
                         <progress id="progresoVuelos" value="44" max="100"></progress>

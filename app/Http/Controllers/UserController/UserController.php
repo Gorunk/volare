@@ -38,7 +38,8 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+        /*  Esto es basicamente un register
+            $request->validate([
             'email' => 'required',
             'password' => 'required'
         ]);
@@ -46,9 +47,13 @@ class UserController extends Controller
         $user = new User();
 
         $user->email = $request->email;
-        $user->password = $request->password;
+        $user->password = Hash::make($request->password);
 
         $user->save();
+
+        Auth::login($user)
+
+        return redirect(route('dashboard'));*/
     }
 
     /**
@@ -63,10 +68,25 @@ class UserController extends Controller
     }
 
     public function login(LoginRequest $request) {
+
+        /*$credentials = [
+            "email" => $request->email,
+            "password" => $request->password,
+        ];
+
+        if(Auth::attempt($credentials)) {
+
+            $request->session()->regenerate();
+            return redirect()->intended(route('dashboard'));
+
+        } else {
+            return redirect(route('welcome'));
+        }*/
+
         $credentials = $request->getCredentials();
 
         if(Auth::validate($credentials)) {
-            return redirect('/welcome')->withErrors('auth.failed');
+            return redirect('/dashboard')->withErrors('auth.failed');
         }$user = Auth::getProvider()->retrieveByCredentials($credentials);
 
         Auth::login($user);
@@ -107,6 +127,16 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    public function logout(Request $request) {
+        Auth::logout();
+
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect(route('welcome'));
+    }
+
     public function destroy($id)
     {
         //

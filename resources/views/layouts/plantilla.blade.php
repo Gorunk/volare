@@ -17,8 +17,11 @@
     <div>
         <div class="navSuperior negroNav blancoTexto">
             <a href="/" class="linkLogoNav"><div class="imagenLogoNavbar"></div></a>
-            <div class="blancoFondo">
-                <a href="/dashboard" title="Lupa"><div id="iconLupa"></div></a>
+            <div>
+                <div class="blancoFondo">
+                    <a href="/dashboard" title="Lupa"><div id="iconLupa"></div></a>
+                </div>
+                <div><h4>{{"USUARIO"}}</h4></div>
             </div>
         </div>
         <fieldset class="content">
