@@ -16,24 +16,24 @@ use App\Http\Controllers\UserController\UserController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 Route::get('/login', [UserController::class, 'login'])->name('login');
 
-Route::post('/dashboard', [UserController::class, 'index'])->name('dashboard');
+Route::post('/dashboard', [UserController::class, 'index'])->middleware('auth')->name('dashboard');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->name('dashboard');
+})/*->middleware('auth')*/->name('dashboard');
 
 Route::get('/vuelos', function () {
     return view('vuelos');
-})->name('vuelos');
+})->middleware('auth')->name('vuelos');
 
 Route::get('/ventas', function () {
     return view('ventas');
-})->name('ventas');
+})->middleware('auth')->name('ventas');
 
 Route::get('/users', function () {
     return view('users');
-});
+})->middleware('auth')->name('users');
