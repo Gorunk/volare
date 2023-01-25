@@ -21,7 +21,9 @@
                 <div class="blancoFondo">
                     <a href="/dashboard" title="Lupa"><div id="iconLupa"></div></a>
                 </div>
+                @auth
                 <div><h4>{{"USUARIO"}}</h4></div>
+                @endauth
             </div>
         </div>
         <fieldset class="content">
