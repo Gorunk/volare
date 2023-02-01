@@ -2,17 +2,19 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
-    <title>Login</title>
+    <title>Home</title>
     @vite(['resources/js/app.js', 'resources/css/app.css'])
     @vite(['resources/js/login.js'])
 </head>
 
 <body>
-<div class="login negro">
-    <div class="logoInicioSesion azul">
-        <div class="imagenLogoW"></div>
-    </div>
-    <div class="inicioSesion">
+<div class="logoInicioSesion azul">
+    <a style="font-size: larger; font-weight: bold; justify-self: right; padding: 1rem; padding-inline: 4rem; position: fixed;" class="blancoTexto" href={{route('login')}}>
+        Iniciar Sesión
+    </a>
+    <div class="imagenLogoW"></div>
+</div>
+    {{--<div class="inicioSesion">
         <h1>Inicio de sesión</h1>
         <form action="{{route('dashboard')}}" method="POST">
 
@@ -36,7 +38,6 @@
             </div>
             <input type="button" class="btn btn-primary ojo" id="ojo">
         </form>
-    </div>
-</div>
+    </div>--}}
 </body>
 </html>

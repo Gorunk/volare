@@ -5,7 +5,10 @@ namespace App\Http\Controllers\UserController;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\LoginRequest;
 use App\Models\User;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
@@ -13,132 +16,39 @@ class UserController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Application|RedirectResponse|Redirector
      */
     public function index()
     {
-        return view('dashboard');
+        return view('welcome');
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    //
+    public function show(): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory|RedirectResponse|Application
     {
-        //
+        if(Auth::check()){
+            return redirect()->route('dashboard');
+        }
+        return view('login');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function login(LoginRequest $request)
     {
-        /*  Esto es basicamente un register
-            $request->validate([
-            'email' => 'required',
-            'password' => 'required'
-        ]);
-
-        $user = new User();
-
-        $user->email = $request->email;
-        $user->password = Hash::make($request->password);
-
-        $user->save();
-
-        Auth::login($user)
-
-        return redirect(route('dashboard'));*/
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        return view('auth.dashboard');
-    }
-
-    public function login(LoginRequest $request) {
-
-        /*$credentials = [
-            "email" => $request->email,
-            "password" => $request->password,
-        ];
-
-        if(Auth::attempt($credentials)) {
-
-            $request->session()->regenerate();
-            return redirect()->intended(route('dashboard'));
-
-        } else {
-            return redirect(route('welcome'));
-        }*/
-
         $credentials = $request->getCredentials();
 
-        if(Auth::validate($credentials)) {
-            return redirect('/dashboard')->withErrors('auth.failed');
-        }$user = Auth::getProvider()->retrieveByCredentials($credentials);
+        if(!Auth::validate($credentials)) {
+            dd('error');
+            return redirect()->to('login')->withErrors(trans('auth.failed'));
+        }
+        $user = Auth::guard('web')->getProvider()->retrieveByCredentials($credentials);
+
 
         Auth::login($user);
 
         return $this->authenticated($request, $user);
     }
 
-    public function authenticated(Request $request, $user) {
-        return redirect('/dashboard');
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    protected function authenticated(Request $request, $user)
     {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-
-    public function logout(Request $request) {
-        Auth::logout();
-
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
-
-        return redirect(route('welcome'));
-    }
-
-    public function destroy($id)
-    {
-        //
+        return redirect()->route('home.index');
     }
 }

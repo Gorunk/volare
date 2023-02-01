@@ -14,13 +14,21 @@ use App\Http\Controllers\UserController\UserController;
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-})->name('welcome');
+})->name('welcome');*/
 
-Route::get('/login', [UserController::class, 'login'])->name('login');
+/*Route::get('/login', [UserController::class, 'index'])->name('login');*/
 
-Route::post('/dashboard', [UserController::class, 'index'])->middleware('auth')->name('dashboard');
+Route::get('/', [UserController::class, 'index'])/*->middleware('auth')*/->name('welcome');
+
+Route::get('/login', function () {
+    return view('login');
+})/*->middleware('auth')*/->name('login');
+
+Route::post('/dashboard', [UserController::class, 'login'])/*->middleware('auth')*/->name('welcome');
+
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
