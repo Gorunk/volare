@@ -1,5 +1,5 @@
 <?php
-
+/*
 namespace App\Http\Controllers\UserController;
 
 use App\Http\Controllers\Controller;
@@ -17,7 +17,7 @@ class UserController extends Controller
      * Display a listing of the resource.
      *
      * @return Application|RedirectResponse|Redirector
-     */
+     *
     public function index()
     {
         return view('welcome');
@@ -51,4 +51,4 @@ class UserController extends Controller
     {
         return redirect()->route('home.index');
     }
-}
+}*/
