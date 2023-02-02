@@ -1,7 +1,7 @@
 <?php
 
+use App\Http\Controllers\LoginController\LoginController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,13 +20,15 @@ use App\Http\Controllers\UserController\UserController;
 
 /*Route::get('/login', [UserController::class, 'index'])->name('login');*/
 
-Route::get('/', [UserController::class, 'index'])/*->middleware('auth')*/->name('welcome');
+Route::get('/', function () {
+    return view('welcome');
+})->name('welcome');
 
 Route::get('/login', function () {
     return view('login');
 })/*->middleware('auth')*/->name('login');
 
-Route::post('/dashboard', [UserController::class, 'login'])/*->middleware('auth')*/->name('welcome');
+Route::post('/dashboard', [LoginController::class, 'login'])->middleware('auth')->name('dashboard');
 
 
 
@@ -36,12 +38,12 @@ Route::get('/dashboard', function () {
 
 Route::get('/vuelos', function () {
     return view('vuelos');
-})->middleware('auth')->name('vuelos');
+})/*->middleware('auth')*/->name('vuelos');
 
 Route::get('/ventas', function () {
     return view('ventas');
-})->middleware('auth')->name('ventas');
+})/*->middleware('auth')*/->name('ventas');
 
 Route::get('/users', function () {
     return view('users');
-})->middleware('auth')->name('users');
+})/*->middleware('auth')*/->name('users');

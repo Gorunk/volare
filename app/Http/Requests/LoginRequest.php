@@ -3,7 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Factory;
+use Illuminate\Contracts\Validation\Factory as ValidationFactory;
 
 class LoginRequest extends FormRequest
 {
@@ -12,7 +12,7 @@ class LoginRequest extends FormRequest
      *
      * @return bool
      */
-    public function authorize(): bool
+    public function authorize()
     {
         return true;
     }
@@ -20,32 +20,54 @@ class LoginRequest extends FormRequest
     /**
      * Get the validation rules that apply to the request.
      *
-     * @return array<string, mixed>
+     * @return array
      */
-    public function rules(): array
+    public function rules()
     {
         return [
-            'email' => 'required',
+            'name' => 'required',
             'password' => 'required'
         ];
     }
 
-    public function getCredentials(): array
+    /**
+     * Get the needed authorization credentials from the request.
+     *
+     * @return array
+     * @throws \Illuminate\Contracts\Container\BindingResolutionException
+     */
+    public function getCredentials()
     {
-        return $this->only('email', 'password');
-        /*$name = $this->get('name');
-        if ($this->isEmail($name)) {
+        // The form field for providing username or password
+        // have name of "username", however, in order to support
+        // logging users in with both (username and email)
+        // we have to check if user has entered one or another
+        $username = $this->get('name');
+
+        if ($this->isEmail($username)) {
             return [
-            'email' => $name,
-            'password' => $this->get('password')
+                'email' => $username,
+                'password' => $this->get('password')
             ];
         }
-        return $this->only('name', 'password');*/
+
+        return $this->only('name', 'password');
     }
 
-    /*public function isEmail($value) {
-        $factory = $this->container->make(Factory::class);
+    /**
+     * Validate if provided parameter is valid email.
+     *
+     * @param $param
+     * @return bool
+     * @throws \Illuminate\Contracts\Container\BindingResolutionException
+     */
+    private function isEmail($param)
+    {
+        $factory = $this->container->make(ValidationFactory::class);
 
-        return ! $factory->make(['name' => $value], ['name' => 'email'])->fails();
-    }*/
+        return ! $factory->make(
+            ['name' => $param],
+            ['name' => 'email']
+        )->fails();
+    }
 }
