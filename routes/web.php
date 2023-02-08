@@ -18,23 +18,25 @@ use Illuminate\Support\Facades\Route;
     return view('welcome');
 })->name('welcome');*/
 
-/*Route::get('/login', [UserController::class, 'index'])->name('login');*/
-
 Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
-Route::get('/login', function () {
+
+
+Route::get('/login', [LoginController::class, 'show'])->name('login');
+
+/*Route::get('/login', function () {
     return view('login');
-})/*->middleware('auth')*/->name('login');
-
-Route::post('/dashboard', [LoginController::class, 'login'])->middleware('auth')->name('dashboard');
+})->middleware('auth')->name('login');*/
 
 
+Route::post('/dashboard', [LoginController::class, 'login'])/*->middleware('guest')*/->name('dashboard');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })/*->middleware('auth')*/->name('dashboard');
+
 
 Route::get('/vuelos', function () {
     return view('vuelos');
