@@ -8,7 +8,7 @@
 <body class="blancoFondo">
 <div class="pagina">
     <div class="navLateral azul">
-        <a href="logout")><div id="iconBrgr"></div></a>
+        <a href="{{route('logout')}}")><div id="iconBrgr"></div></a>
         <a class="elemento" href="/dashboard" title="DashBoard"><div id="iconDB"></div></a>
         <a class="elemento" href="/vuelos"><div title="Listado de Vuelos" id="iconVuelos"></div></a>
         <a class="elemento" href="/ventas"><div title="Listado de Ventas" id="iconVentas"></div></a>
