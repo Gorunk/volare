@@ -2,11 +2,13 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Contracts\Container\BindingResolutionException;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Contracts\Validation\Factory as ValidationFactory;
 
 class LoginRequest extends FormRequest
 {
+
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -25,7 +27,7 @@ class LoginRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
+            'email' => 'required',
             'password' => 'required'
         ];
     }
@@ -34,11 +36,11 @@ class LoginRequest extends FormRequest
      * Get the needed authorization credentials from the request.
      *
      * @return array
-     * @throws \Illuminate\Contracts\Container\BindingResolutionException
      */
     public function getCredentials()
     {
-        $username = $this->get('name');
+        return $this->only('email', 'password');
+        /*$username = $this->get('name');
 
         if ($this->isEmail($username)) {
             return [
@@ -47,7 +49,7 @@ class LoginRequest extends FormRequest
             ];
         }
 
-        return $this->only('name', 'password');
+        return $this->only('name', 'password');*/
     }
 
     /**
@@ -55,7 +57,7 @@ class LoginRequest extends FormRequest
      *
      * @param $param
      * @return bool
-     * @throws \Illuminate\Contracts\Container\BindingResolutionException
+     * @throws BindingResolutionException
      */
     private function isEmail($param)
     {

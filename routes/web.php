@@ -26,26 +26,28 @@ Route::get('/', function () {
 
 Route::get('/login', [LoginController::class, 'show'])->name('login');
 
+
 /*Route::get('/login', function () {
     return view('login');
 })->middleware('auth')->name('login');*/
 
 
-Route::post('/dashboard', [LoginController::class, 'login'])/*->middleware('guest')*/->name('dashboard');
+Route::post('/inicio-sesion', [LoginController::class, 'login'])->middleware('guest')->name('inicio-sesion');
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-})/*->middleware('auth')*/->name('dashboard');
+})->middleware('auth')->name('dashboard');
 
 
 Route::get('/vuelos', function () {
     return view('vuelos');
-})/*->middleware('auth')*/->name('vuelos');
+})->middleware('auth')->name('vuelos');
 
 Route::get('/ventas', function () {
     return view('ventas');
-})/*->middleware('auth')*/->name('ventas');
+})->middleware('auth')->name('ventas');
 
 Route::get('/users', function () {
     return view('users');
-})/*->middleware('auth')*/->name('users');
+})->middleware('auth')->name('users');
