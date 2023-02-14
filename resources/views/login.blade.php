@@ -14,24 +14,24 @@
     </div>
     <div class="inicioSesion">
         <h1>Inicio de sesión</h1>
-        <form action="{{route('dashboard')}}" method="POST">
+        <form action="{{route('inicio-sesion')}}" method="POST">
 
             @csrf
 
             <div class="formInicioSesion">
                 <div class="mb-3">
                     <label for="inputEmail" class="form-label"></label>
-                    <input type="text" class="form-control" id="inputEmail" placeholder="Email">
+                    <input type="text" class="form-control" id="email" name="email" placeholder="Email">
                 </div>
                 <div class="mb-3">
                     <label for="inputPassword" class="form-label"></label>
-                    <input type="password" class="form-control" id="inputPassword" placeholder="Contraseña">
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Contraseña">
                 </div>
                 <div class="mb-3">
                     <a style="color:white; font-size: 0.6rem; padding-inline: 0.5rem" href="/">Olvidé mi contraseña</a>
                 </div>
                 <div class="mb-3 botonLogin">
-                    <button type="submit" style="color: white; font-size: 1rem; font-weight: bold" class="btn btn-primary azul  ">Iniciar sesión</button>
+                    <button type="submit" style="color: white; font-size: 1rem; font-weight: bold" class="btn btn-primary azul">Iniciar sesión</button>
                 </div>
             </div>
             <input type="button" class="btn btn-primary ojo" id="ojo">

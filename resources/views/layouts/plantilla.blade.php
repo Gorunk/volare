@@ -8,7 +8,7 @@
 <body class="blancoFondo">
 <div class="pagina">
     <div class="navLateral azul">
-        <a href="/dashboard")><div id="iconBrgr"></div></a>
+        <a href="logout")><div id="iconBrgr"></div></a>
         <a class="elemento" href="/dashboard" title="DashBoard"><div id="iconDB"></div></a>
         <a class="elemento" href="/vuelos"><div title="Listado de Vuelos" id="iconVuelos"></div></a>
         <a class="elemento" href="/ventas"><div title="Listado de Ventas" id="iconVentas"></div></a>
@@ -22,7 +22,7 @@
                     <a href="/dashboard" title="Lupa"><div id="iconLupa"></div></a>
                 </div>
                 @auth
-                <div><h4>{{"USUARIO"}}</h4></div>
+                <div><h4>{{strtoupper(auth()->user()->name)}}</h4></div>
                 @endauth
             </div>
         </div>
