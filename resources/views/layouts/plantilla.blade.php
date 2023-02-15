@@ -17,12 +17,21 @@
     <div>
         <div class="navSuperior negroNav blancoTexto">
             <a href="/" class="linkLogoNav"><div class="imagenLogoNavbar"></div></a>
-            <div>
-                <div class="blancoFondo">
+            <div id="userMenuNav">
+                <div class="blancoFondo" id="btnLupa">
                     <a href="/dashboard" title="Lupa"><div id="iconLupa"></div></a>
                 </div>
                 @auth
-                <div><h4>{{strtoupper(auth()->user()->name)}}</h4></div>
+                <div id="imagenUser"></div>
+                <div>
+                    <div class="dropdown">
+                        <div onclick="showDrop" class="dropbtn" id="dropbtnUser"><h4>{{strtoupper(auth()->user()->name)}}<span id="flechaArribaAbajo"> ▾</span></h4></div>
+                        <div id="dropUser" class="dropUserContent">
+                            <a href="{{route('logout')}}">Logout</a>
+                        </div>
+                    </div>
+                    {{--<h3>{{strtoupper(auth()->user()->name)}}</h3>--}}
+                </div>
                 @endauth
             </div>
         </div>

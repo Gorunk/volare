@@ -51,12 +51,7 @@ class LoginController extends Controller
         return redirect(route('dashboard'));
     }
 
-    /**
-     * Log the user out of the application.
-     *
-     * @param LoginRequest $request
-     * @return Application|Redirector|RedirectResponse
-     */
+
     public function logout(LoginRequest $request)
     {
         Auth::logout();
@@ -65,10 +60,5 @@ class LoginController extends Controller
         $request->session()->regenerateToken();
 
         return redirect(route('login'));
-    }
-
-    public function getName()
-    {
-        return null;
     }
 }

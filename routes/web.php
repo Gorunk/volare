@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\LoginController\LoginController;
+use App\Http\Controllers\LogoutController\LogoutController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,7 +34,7 @@ Route::get('/login', [LoginController::class, 'show'])->name('login');
 
 
 Route::post('/inicio-sesion', [LoginController::class, 'login'])->middleware('guest')->name('inicio-sesion');
-Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+Route::get('/logout', [LogoutController::class, 'logout'])->name('logout');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
