@@ -3,7 +3,7 @@
 @section('title', 'DashBoard')
 
 @section('content')
-    <h1>DASHBOARD</h1><br><br>
+    <h1 class="pageTitle">DASHBOARD</h1>
     <div class="dashgrid">
         <fieldset class="blancoFondo">
             <h2>Últimas compras</h2>

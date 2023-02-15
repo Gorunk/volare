@@ -3,6 +3,6 @@
 @section('title', 'Lista de Vuelos')
 
 @section('content')
-    <h1>LISTADO DE VUELOS</h1><br><br>
+    <h1 class="pageTitle">LISTADO DE VUELOS</h1>
     @include('/layouts/filtro')
 @endsection

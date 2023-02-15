@@ -3,8 +3,6 @@ import './bootstrap';
 --------PÁGINA PRINCIPAL------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------*/
 
-
-
 let elementos = document.getElementsByClassName("elemento");
 
 for(let i=0; i<elementos.length;i++) {
@@ -13,6 +11,21 @@ for(let i=0; i<elementos.length;i++) {
     }
 }
 
-/*document.getElementById('iconVuelos').addEventListener('click', ()=> {
-    alert("ha funcionado");
-})*/
+/*----------------------------------------------------------------------------------------------------------
+--------DROPDOWN USUARIO------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------*/
+
+let flecha = document.getElementById('flechaArribaAbajo');
+flecha.textContent = " ▾"
+
+let dropBtn = document.getElementById('dropbtnUser');
+let dropUser = document.getElementById("dropUser");
+
+dropBtn.addEventListener("click", ()=>{
+    dropUser.classList.toggle("showDrop")
+    if(dropUser.className==="dropUserContent showDrop") {
+        flecha.textContent = " ▴";
+    } else {
+        flecha.textContent = " ▾";
+    }
+});

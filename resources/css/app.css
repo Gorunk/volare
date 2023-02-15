@@ -145,6 +145,10 @@ h1, h2, h3, h4, h5, h6 {font-family: "Zilla Slab"; font-weight: bold}
     display: flex;
     justify-content: space-evenly;
 }
+
+.pageTitle {
+    margin-bottom: 3rem;
+}
 /*----------------------------------------------------------------------------------------------------------
 --------NAV LATERAL-----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------*/
@@ -218,13 +222,15 @@ h1, h2, h3, h4, h5, h6 {font-family: "Zilla Slab"; font-weight: bold}
     padding: 1rem;
 }
 
-.navSuperior div:nth-child(2) {
+/*.navSuperior div:nth-child(2)*/
+#userMenuNav{
     display: flex;
     align-items: center;
     padding-left: 1rem;
 }
 
-.navSuperior div div:nth-child(1) {
+/*.navSuperior div div:nth-child(1)*/
+#btnLupa {
     padding: 0.3rem;
     border-radius: 6px;
 }
@@ -237,9 +243,48 @@ h1, h2, h3, h4, h5, h6 {font-family: "Zilla Slab"; font-weight: bold}
     width: 56px;
 }
 
-.linkLogoNav {
-
+#imagenUser {
+    background-image: url("/public/iconUser.png");
+    background-size: cover;
+    padding: 1.3rem;
+    margin-left: 2rem;
+    border-radius: 20px;
 }
+
+/*----------------------------------------------------------------------------------------------------------
+--------DROPDOWN USER---------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------*/
+
+.dropbtn {
+    color: white;
+    padding: 0.5rem;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropUserContent {
+    display: none;
+    position: absolute;
+    background-color: white;
+    overflow: auto;
+    box-shadow: 0 4px 16px 0 rgba(0,0,0,0.2);
+}
+
+.dropUserContent a {
+    color: black;
+    padding: 0.3rem;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {background-color: #E4F2F2;}
+
+.showDrop {display: block;}
 
 /*----------------------------------------------------------------------------------------------------------
 --------FIELDSET--------------------------------------------------------------------------------------------
