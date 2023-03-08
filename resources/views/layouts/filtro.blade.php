@@ -10,6 +10,6 @@
     </div>
     <div style="display: flex; align-items: center;">
         <div id="iconSuma"></div>
-        <button type="submit" style="color: white; font-size: 1rem; font-weight: bold" class="azul">Añadir vuelo</button>
+        <button type="submit" style="color: white; font-size: 1rem; font-weight: bold" class="azul">Añadir nuevo</button>
     </div>
 </form>
