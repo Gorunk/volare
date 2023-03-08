@@ -1,54 +1,75 @@
 <?php
-/*
+
 namespace App\Http\Controllers\UserController;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\LoginRequest;
 use App\Models\User;
-use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Redirector;
-use Illuminate\Support\Facades\Auth;
+use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return Application|RedirectResponse|Redirector
-     *
     public function index()
     {
-        return view('welcome');
+        $users = User::all();
+
+        return view('users');
     }
-    //
-    public function show(): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory|RedirectResponse|Application
+
+    /*public function show(User $user)
     {
-        if(Auth::check()){
-            return redirect()->route('dashboard');
+        $roles = Role::all();
+        $permissions = Permission::all();
+
+        return view('admin.users.role', compact('user', 'roles', 'permissions'));
+    }*/
+
+    public function assignRole(Request $request, User $user)
+    {
+        if ($user->hasRole($request->role)) {
+            return back()->with('message', 'Role exists.');
         }
-        return view('login');
+
+        $user->assignRole($request->role);
+        return back()->with('message', 'Role assigned.');
     }
 
-    public function login(LoginRequest $request)
+    public function removeRole(User $user, Role $role)
     {
-        $credentials = $request->getCredentials();
-
-        if(!Auth::validate($credentials)) {
-            dd('error');
-            return redirect()->to('login')->withErrors(trans('auth.failed'));
+        if ($user->hasRole($role)) {
+            $user->removeRole($role);
+            return back()->with('message', 'Role removed.');
         }
-        $user = Auth::guard('web')->getProvider()->retrieveByCredentials($credentials);
 
-
-        Auth::login($user);
-
-        return $this->authenticated($request, $user);
+        return back()->with('message', 'Role not exists.');
     }
 
-    protected function authenticated(Request $request, $user)
+    public function givePermission(Request $request, User $user)
     {
-        return redirect()->route('home.index');
+        if ($user->hasPermissionTo($request->permission)) {
+            return back()->with('message', 'Permission exists.');
+        }
+        $user->givePermissionTo($request->permission);
+        return back()->with('message', 'Permission added.');
     }
-}*/
+
+    public function revokePermission(User $user, Permission $permission)
+    {
+        if ($user->hasPermissionTo($permission)) {
+            $user->revokePermissionTo($permission);
+            return back()->with('message', 'Permission revoked.');
+        }
+        return back()->with('message', 'Permission does not exists.');
+    }
+
+    public function destroy(User $user)
+    {
+        if ($user->hasRole('admin')) {
+            return back()->with('message', 'you are admin.');
+        }
+        $user->delete();
+
+        return back()->with('message', 'User deleted.');
+    }
+}

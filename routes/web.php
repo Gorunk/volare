@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController\UserController;
 use App\Http\Controllers\LoginController\LoginController;
 use App\Http\Controllers\LogoutController\LogoutController;
 use Illuminate\Support\Facades\Route;
@@ -49,6 +50,9 @@ Route::get('/ventas', function () {
     return view('ventas');
 })->middleware('auth')->name('ventas');
 
-Route::get('/users', function () {
+
+Route::get('/users', [UserController::class, 'index'])->middleware('auth')->name('users');
+
+/*Route::get('/users', function () {
     return view('users');
-})->middleware('auth')->name('users');
+})->middleware('auth')->name('users');*/

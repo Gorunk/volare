@@ -3,12 +3,7 @@
 namespace App\Http\Controllers\LoginController;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Contracts\Container\BindingResolutionException;
-use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
-use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\LoginRequest;
 
@@ -52,7 +47,7 @@ class LoginController extends Controller
     }
 
 
-    public function logout(LoginRequest $request)
+    /*public function logout(LoginRequest $request)
     {
         Auth::logout();
 
@@ -60,5 +55,5 @@ class LoginController extends Controller
         $request->session()->regenerateToken();
 
         return redirect(route('login'));
-    }
+    }*/
 }
